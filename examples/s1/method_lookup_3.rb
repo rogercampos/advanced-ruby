@@ -11,7 +11,7 @@ module X
 end
 
 class A < B
-  include X
+  #include X
 
   def method_missing(name, *args)
     "Hello from A #method_missing\n" + super

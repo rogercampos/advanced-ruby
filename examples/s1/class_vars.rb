@@ -27,27 +27,33 @@ class ExampleSubclass < ExampleClass
 end
 
 first_example = ExampleClass.new
-first_example.test
+#first_example.test
 
 puts "---"
 
 second_example = ExampleSubclass.new
-second_example.test
+#second_example.test
 
 
-__END__
+#__END__
 
 module A
   @foo = "OLA"
-end
 
-class Foo
-  extend A
-
-  def self.foo
+  def get_foo
     @foo
   end
 end
 
+class Foo
+  @foo = 99
+  extend A
 
-p Foo.foo
+  def self.foo
+    p get_foo
+    p @foo
+  end
+end
+
+Foo.foo
+p Foo.get_foo

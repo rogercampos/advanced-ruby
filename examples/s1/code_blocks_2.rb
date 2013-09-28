@@ -13,18 +13,30 @@ a.map{|x| x * 10}
 
 p a.map(&doubler)
 
+#__END__
 
 def foo(x, &block)
+
+  p block.object_id
+  p block.class
+
   block.call "Hello"
 end
 
+
+var = 8
+
 foo(nil) do |x|
-  p x.upcase
+  p x.upcase * var
 end
 
 # The &block syntax is just optional, yield works also
 
 def foo(x)
   yield("Hello")
+end
+
+def foo(x, &block)
+  block.call("Hello")
 end
 

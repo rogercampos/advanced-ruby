@@ -8,5 +8,6 @@ p b
 
 doubler = Proc.new {|x| x * 2 }
 
+
 p doubler.call(3)
 p doubler.call(10)

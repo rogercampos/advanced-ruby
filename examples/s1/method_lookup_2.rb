@@ -38,12 +38,14 @@ class B < A
 end
 
 object = B.new
-object.extend(Y)
-object.extend(Z)
 
 def object.foo
   "- Method defined directly on an instance of B\n" + super
 end
+
+object.extend(Y)
+object.extend(Z)
+
 
 puts object.foo
 
